@@ -28,5 +28,12 @@ Route::get('covid.conocelo', 'CovidController@conocelo')->name('conocelo');
 Route::get('covid.preparate', 'CovidController@preparate')->name('preparate');
 Route::get('covid.actua', 'CovidController@actua')->name('actua');
 Route::resource('preguntas', 'PreguntasController')->only('index','create','store');
+Route::resource('medico', 'MedicoController');
+Route::resource('recetamedica', 'RecetamedicaController');
+Route::resource('secretaria', 'SecretariaController');
+Route::resource('paciente', 'PacienteController');
+Route::resource('citamedica', 'CitamedicaController');
+Route::resource('consultamedica', 'ConsultamedicaController');
+
 
 

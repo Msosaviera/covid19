@@ -39,7 +39,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/img/portfolio/circus.png') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid03.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 4-->
@@ -49,7 +49,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/img/portfolio/game.png') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid04.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 5-->
@@ -58,7 +58,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/img/portfolio/safe.png') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid05.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 6-->
@@ -67,7 +67,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/img/portfolio/submarine.png') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid06.jpg') !!}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/esp_COVID_SM_act_01.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/esp_COVID_SM_act_02.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -141,16 +141,16 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">CONÓCELO</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/img/portfolio/circus.png') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid03.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Conóce más sobre el covid - 19.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -171,16 +171,16 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Síntomas</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/img/portfolio/game.png') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid04.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Conóce los síntomas del Covid - 19.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -200,16 +200,16 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Conócelo</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/img/portfolio/safe.png') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid05.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Conóce como se transmite el Covid - 19.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -236,9 +236,9 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/img/portfolio/submarine.png') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid06.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Conóce las personas con más peligro de contagiarse con Covid - 19.</p>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>

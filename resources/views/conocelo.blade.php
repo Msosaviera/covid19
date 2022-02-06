@@ -21,7 +21,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/covid/esp_COVID_SM_know_02.jpg') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid03.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -30,7 +30,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/covid/esp_COVID_SM_know_01.jpg') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid04.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -39,7 +39,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/covid/esp_COVID_SM_know_03.jpg') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid05.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 4-->
@@ -48,7 +48,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{!! asset('assets/covid/esp_COVID_SM_know_04.jpg') !!}" alt="" />
+                            <img class="img-fluid" src="{!! asset('assets/covid/covid06.jpg') !!}" alt="" />
                         </div>
                     </div>
                     <!-- Portfolio Item 5-->
@@ -91,8 +91,8 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/esp_COVID_SM_know_02.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid03.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -119,8 +119,8 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/esp_COVID_SM_know_01.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid04.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -147,8 +147,8 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/esp_COVID_SM_know_03.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid05.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>
@@ -175,8 +175,8 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/esp_COVID_SM_know_04.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
-                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="{!! asset('assets/covid/covid06.jpg') !!}" alt="" /><!-- Portfolio Modal - Text-->
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Cerrar</button>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 @extends('plantilla.plantilla')
-@section('titulo','Preguntas y Respuestas')
+@section('titulo','Registro de Citas')
 @section('contenido')
 
 <section style="margin-top: 150px">
@@ -9,19 +9,21 @@
                 <form method="POST" action="{{ route('preguntas.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Pregunta</label>
-                        <input type="text" name="titulo" class="form-control" placeholder="Ingresa la Pregunta" required>
-                        <small id="emailHelp" class="form-text text-muted">Debe ser una pregunta corta</small>
+                        <label for="exampleInputEmail1">Nombre Completo</label>
+                        <input type="text" name="titulo" class="form-control" placeholder="Ingresa su nombre" required>
+                        <small id="emailHelp" class="form-text text-muted">Debe colocar su nombre Completo</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Fecha y hora de cita</label>
+                        <input type="text" name="link" class="form-control" placeholder="Ingrese su hora de cita" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Respuesta</label>
+                        <label for="exampleInputPassword1">Molestia previa a la cita</label>
                         <textarea name="contenido"  cols="30" rows="10" class="form-control" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Link de Refererncia</label>
-                        <input type="text" name="link" class="form-control" placeholder="Ingrese el link" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <button type="submit" class="btn btn-primary">Registrar Cita</button>
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactosTable extends Migration
+class CreateMedicosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,19 @@ class CreateContactosTable extends Migration
      */
     public function up()
     {
-        Schema::create('contactos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('medicos', function (Blueprint $table) {
+
+            $table->id();
             $table->string('nombre');
             $table->string('appaterno');
             $table->string('apmaterno');
-            $table->date('fecha_naciemiento');
-            $table->string('correo');
-            $table->string('sexo');
+            $table->string('carnetidentidad')->unique();
             $table->integer('telefono');
-            $table->text('direccion');
+            $table->string('especialidad');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id')->on('users');
             $table->timestamps();
 
-            $table->foreignId('user_id')->constrained();
         });
     }
 
@@ -36,6 +36,6 @@ class CreateContactosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contactos');
+        Schema::dropIfExists('medicos');
     }
 }

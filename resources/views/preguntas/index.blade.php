@@ -1,5 +1,5 @@
 @extends('plantilla.plantilla')
-@section('titulo','Preguntas y Respuestas')
+@section('titulo','Registro de Citas')
 @section('contenido')
 @php
 $i = 'true'
@@ -20,7 +20,7 @@ $i = 'true'
 @endif
     <div class="row">
         <div class="col-12">
-            <a href="{{ route('preguntas.create') }}" class="btn btn-success btn-block">CREAR NUEVO REGISTRO</a>
+            <a href="{{ route('preguntas.create') }}" class="btn btn-success btn-block">CREAR NUEVA CITA</a>
         </div>
         <div class="col-12">
             <div class="accordion" id="accordionExample">

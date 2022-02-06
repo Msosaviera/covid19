@@ -1,5 +1,5 @@
 @extends('plantilla.plantilla')
-@section('titulo','Test')
+@section('titulo','Consultas')
 @section('contenido')
 <div class="container" style="margin-top: 200px">
 

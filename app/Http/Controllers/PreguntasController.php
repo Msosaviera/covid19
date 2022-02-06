@@ -44,7 +44,7 @@ class PreguntasController extends Controller
         $Preguntas = new Preguntas;
         $Preguntas->titulo        = $request->titulo;
         $Preguntas->contenido     = $request->contenido;
-        $Preguntas->autor         = $request->autor;
+        $Preguntas->autor         = Auth::user()->name;
         $Preguntas->link          = $request->link;
         $Preguntas->user_id       = Auth::id();
         $Preguntas->save();
