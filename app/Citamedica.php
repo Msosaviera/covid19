@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Paciente;
+use SoftDeletes;
 
 class Citamedica extends Model
 {
-    //use SoftDeletes;
+    
 
     protected $guarded = [];
 

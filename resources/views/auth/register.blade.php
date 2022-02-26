@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('plantilla.plantilla')
+@section('titulo','Registro')
+@section('contenido')
 
-
-@section('content')
-<div class="container">
+<div class="container" style="margin-top: 150px;margin-bottom: 150px;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -61,18 +61,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="rol" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
-
-                            <div class="col-md-6">
-                                <!-- <input id="password-confirm" type="rol" class="form-control" name="password_confirmation" required autocomplete="new-password"> -->
-                                <select class="form-control" id="rol" name="rol">
-                                    <option value="Medico">Médico</option>
-                                    <option value="Secretaria">Secretaria</option>
-                                </select>
-                               
-                            </div>
-                        </div>
+                    
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

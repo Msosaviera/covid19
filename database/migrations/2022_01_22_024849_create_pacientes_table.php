@@ -24,7 +24,7 @@ class CreatePacientesTable extends Migration
             $table->integer('telefono');
             $table->string('direccion');
             $table->timestamps();
-           // $table->softDeletes();
+            $table->softDeletes();
         });
     }
 

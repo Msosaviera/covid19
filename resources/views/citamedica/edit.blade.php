@@ -17,7 +17,7 @@
                         <label for="exampleInputEmail1">Hora de la Cita</label>
                         <input type="time" name="horaCita" class="form-control" placeholder="Ingresa su apellido parterno" value="{{$citamedica->horaCita}}" required>
                     </div>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Molestia previa a la cita</label>
                         <textarea name="molestiasPrevias"  cols="30" rows="10" class="form-control" required>{{$citamedica->molestiasPrevias}}</textarea>
@@ -38,11 +38,12 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Médico </label>
                         <select name="usuario" id="">
-                            @foreach ($users as $user)
-                            @if($user->rol == "Medico"){
-                                <option value="{{$user->id}}">{{$user->name}}</option>
-                            }
-                            @endif
+                        @foreach ($roles as $role)
+                                @if($role->id == $role->name)
+                                    <option selected value="{{$role->id}}">{{$role->name}}</option>    
+                                @else
+                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

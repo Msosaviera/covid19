@@ -17,9 +17,9 @@
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-            <div class="container">
+            <div class="container" style='max-width: 1550px !important;'>
                 <a class="navbar-brand js-scroll-trigger" href="{{ route('inicio') }}">Consultorio "Sandoval"</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
-                <li class="nav-item mx-0 mx-lg-1">
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Covid-19
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1">
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Estadisticas
@@ -42,26 +42,37 @@
                         </div>
                     </div>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('preguntas.index') }}">Citas</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('test.create') }}">Consultas</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('medico.create') }}">Médicos</a></li>
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('test.index') }}">Reportes</a></li>
-                <!--<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('recetamedica.index') }}">Recetas medicas</a></li>-->
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('citamedica.create') }}">Citas</a></li>
+                
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('paciente.create') }}">Paciente</a></li>
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reportes
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{{ route('citamedica.index') }}">Citas</a>
+                            <a class="dropdown-item" href="{{ route('consultamedica.index') }}">Consultas</a>
+                            <a class="dropdown-item" href="{{ route('paciente.index') }}">Pacientes</a>
+                            <a class="dropdown-item" href="{{ route('recetamedica.index') }}">Recetas</a>
+                        </div>
+                    </div>
+                </li>
+                @role('administrador')
+                @if (Route::has('register'))
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">Registrate</a></li>
+                @endif
+                @endrole
                 <li>
-                <li>
+                <li class="list-unstyled">
                         @guest
-                            <li class="nav-item">
+                            <li class="nav-item list-unstyled">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrate') }}</a>
-                                </li>
-                            @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown list-unstyled">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} -  {{ Auth::user()->rol }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} -  {{ Auth::user()->roles->pluck('name')[0] ?? '' }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

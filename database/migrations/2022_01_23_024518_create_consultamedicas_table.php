@@ -15,23 +15,18 @@ class CreateConsultamedicasTable extends Migration
     {
         Schema::create('consultamedicas', function (Blueprint $table) {
             $table->id();
-            $table->integer('numCita');
             $table->date('fecha');
             $table->time('hora');
-            $table->text('molestiasPrevias');
-            //$table->unsignedBigInteger('secretaria_id');
-            //$table->foreign('secretaria_id')->references('id')->on('secretarias');
-           $table->unsignedBigInteger('medico_id');
-           // $table->foreign('medico_id')->references('id')->on('medicos');
+            $table->text('detalles');
             $table->unsignedBigInteger('creadopor');
-            $table->unsignedBigInteger('receta_id');
-            $table->foreign('receta_id')->references('id')->on('recetamedicas');
+            // $table->unsignedBigInteger('receta_id');
+            // $table->foreign('receta_id')->references('id')->on('recetamedicas');
             $table->unsignedBigInteger('cita_id');
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('users');
             $table->foreign('cita_id')->references('id')->on('citamedicas');
             $table->timestamps();
-           // $table->softDeletes();
+            $table->softDeletes();
         });
     }
 

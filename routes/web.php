@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('inicio');
 Auth::routes();
+Route::get('consulta/{id}', 'ConsultamedicaController@consulta')->name('registroconsulta');
+Route::resource('consultamedica', 'ConsultamedicaController');
+Route::get('receta/{id}', 'RecetamedicaController@receta')->name('recetamedica');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('nosotros.index', 'NosotrosController@index')->name('nosotros');
 Route::resource('estadistica', 'EstadisticaController');
@@ -33,7 +36,7 @@ Route::resource('recetamedica', 'RecetamedicaController');
 Route::resource('secretaria', 'SecretariaController');
 Route::resource('paciente', 'PacienteController');
 Route::resource('citamedica', 'CitamedicaController');
-Route::resource('consultamedica', 'ConsultamedicaController');
+Route::get('excel/', 'CitamedicaController@excel')->name('excel');
 
 
 

@@ -10,13 +10,13 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Fecha de la Cita</label>
-                        <input type="date" name="fechaCita" class="form-control" placeholder="Ingresa su nombre" required>
+                        <input type="date" name="fechaCita" class="form-control" placeholder="Ingresa su nombre" value="{{ Carbon\Carbon::now()->format('Y-m-d') }}" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Hora de la Cita</label>
-                        <input type="time" name="horaCita" class="form-control" placeholder="Ingresa su apellido parterno" required>
+                        <input type="time" name="horaCita" class="form-control" placeholder="Ingresa su apellido parterno" value="{{ Carbon\Carbon::now()->format('H:i') }}" required>
                     </div>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="exampleInputPassword1">Molestia previa a la cita</label>
                         <textarea name="molestiasPrevias"  cols="30" rows="10" class="form-control" required></textarea>
@@ -29,23 +29,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="exampleInputEmail1"> Secretaria </label>
-                        <select name="secretaria" id="">
-                            @foreach ($secretarias as $secretaria)
-                                <option value="{{$secretaria->id}}">{{$secretaria->nombre}}</option>
-                            @endforeach
-                        </select>
-                    </div> -->
                    
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Médico </label>
                         <select name="usuario" id="">
-                            @foreach ($users as $user)
-                            @if($user->rol == "Medico"){
-                                <option value="{{$user->id}}">{{$user->name}}</option>
-                            }
-                            @endif
+                            @foreach ($roles as $role)
+                                <option value="{{$role->id}}">{{$role->name}}</option>
                             @endforeach
                         </select>
                     </div>

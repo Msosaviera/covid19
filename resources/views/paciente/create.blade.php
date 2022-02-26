@@ -1,5 +1,5 @@
 @extends('plantilla.plantilla')
-@section('titulo','RecetaMedica')
+@section('titulo','Registro Pacientes')
 @section('contenido')
 
 <section style="margin-top: 150px">
@@ -20,10 +20,17 @@
                         <label for="exampleInputEmail1">Apellido Materno</label>
                         <input type="text" name="apmaterno" class="form-control" placeholder="Ingrese los laboratorios requeridos" required>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Género</label>
-                        <input type="text" name="sexo" class="form-control" placeholder="Ingrese los laboratorios requeridos" required>
-                    </div>
+                    <div class="form-group row">
+                            <label for="sexo" class="col-md-4 col-form-label text-md-right">{{ __('Genero') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="sexo" name="sexo">
+                                    <option value="Hombre">Hombre</option>
+                                    <option value="Mujer">Mujer</option>
+                                </select>
+                               
+                            </div>
+                        </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Fecha de Nacimiento</label>
                         <input type="date" name="fechaNacimiento" class="form-control" placeholder="Ingrese los laboratorios requeridos" required>

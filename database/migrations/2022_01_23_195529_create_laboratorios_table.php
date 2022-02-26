@@ -20,6 +20,7 @@ class CreateLaboratoriosTable extends Migration
             $table->unsignedBigInteger('consulta_id');
             $table->foreign('consulta_id')->references('id')->on('consultamedicas');            
             $table->timestamps();
+            
         });
     }
 

@@ -12,13 +12,15 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Apelido Paterno</th>
-                            <th>Apelido Materno</th>
-                            <th>Genero</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Género</th>
                             <th>Fecha de Nacimiento</th>
                             <th>Carnet de identidad</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Dirección</th>
+                            <th>Acción</th>
+                            <th>Borrrar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,23 +35,38 @@
                                 <td>{{ $paciente->carnetIdentidad }}</td>
                                 <td>{{ $paciente->telefono }}</td>
                                 <td>{{ $paciente->direccion }}</td>
+                                
+                                <td><a href="{{ route('paciente.edit', $paciente) }}" class="btn btn-primary">Actualizar</a></td>
+                                <td>
+                                    <form method="POST" action="{{route('paciente.destroy',$paciente->id)}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Borrar</button>
+
+                                    </form>
+                                </td>
+                                
+                                
+                                
                             </tr>
 
                             @endforeach
                     </tbody>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
-                            <th>ID</th>
+                        <th>ID</th>
                             <th>Nombre</th>
-                            <th>Apelido Paterno</th>
-                            <th>Apelido Materno</th>
-                            <th>Genero</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Género</th>
                             <th>Fecha de Nacimiento</th>
                             <th>Carnet de identidad</th>
-                            <th>Telefono</th>
+                            <th>Teléfono</th>
                             <th>Dirección</th>
+                            <th>Acción</th>
+                            <th>Borrrar</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                 </table>
             </div>
         </div>

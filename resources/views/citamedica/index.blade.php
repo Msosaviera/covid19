@@ -6,6 +6,11 @@
     <div class="row">
         <div class="col-12">
             <h1>REPORTE DE CITAS MÉDICAS</h1>
+            <form method="GET" action="{{ route('excel') }}">
+            @csrf
+            
+                <button type="submit"  class="btn btn-success">Exportar Excel</button>
+            </form>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -18,7 +23,7 @@
                             <th>Médico</th>
                             <th>Accion</th>
                             <th>Borrrar</th>
-                            <!-- <th>Secretaria</th> -->
+                            <th>Crear</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,7 +35,10 @@
                                 <td>{{ $citamedica->molestiasPrevias}}</td>
                                 <td>{{ $citamedica->nombre }}</td>
                                 <td>{{ $citamedica->name }}</td>
+                                
                                 <td><a href="{{ route('citamedica.edit', $citamedica) }}" class="btn btn-primary">Actualizar</a></td>
+                               
+                               
                                 <td>
                                     <form method="POST" action="{{route('citamedica.destroy',$citamedica->id)}}">
                                     @csrf
@@ -39,23 +47,31 @@
 
                                     </form>
                                 </td>
-                                <!-- <td>{{ $citamedica->secretaria_id }}</td> -->
+                                @role('medico|administrador')
+                                <td><a href="{{ route('registroconsulta', $citamedica->id) }}" class="btn btn-dark">Consulta</a></td>
+                                @else
+                            
+                            <td><p>No tiene permiso de acceso.</p></td>
+                            @endrole
                                 
                             </tr>
 
                             @endforeach
                     </tbody>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
-                        <th>ID</th>
+                        
+                            <<th>ID</th>
                             <th>Fecha Cita</th>
                             <th>Hora Cita</th>
                             <th>Molestas Previas</th>
                             <th>Paciente</th>
                             <th>Médico</th>
-                            <!-- <th>Secretaria</th> -->
+                            <th>Accion</th>
+                            <th>Borrrar</th>
+                            <th>Crear</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                 </table>
             </div>
         </div>

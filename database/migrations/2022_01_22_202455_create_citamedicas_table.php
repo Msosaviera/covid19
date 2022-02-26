@@ -27,7 +27,7 @@ class CreateCitamedicasTable extends Migration
             $table->unsignedBigInteger('creadopor');
             //$table->foreign('secretaria_id')->references('id')->on('secretarias');
             $table->timestamps();
-            //$table->softDeletes();
+            $table->softDeletes();
         });
     }
 

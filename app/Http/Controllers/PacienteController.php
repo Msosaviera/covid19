@@ -12,6 +12,10 @@ class PacienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $pacientes = Paciente::all();
@@ -72,7 +76,9 @@ class PacienteController extends Controller
      */
     public function edit(Paciente $paciente)
     {
-        //
+        $paciente = Paciente::find($paciente->id);
+
+        return view('paciente.edit')->with('paciente',$paciente);
     }
 
     /**
@@ -84,7 +90,20 @@ class PacienteController extends Controller
      */
     public function update(Request $request, Paciente $paciente)
     {
-        //
+        $paciente = Paciente::find($paciente->id);
+
+        $paciente->nombre = $request->nombre;
+        $paciente->appaterno = $request->appaterno;
+        $paciente->apmaterno = $request->apmaterno;
+        $paciente->sexo = $request->sexo;
+        $paciente->fechaNacimiento = $request->fechaNacimiento;
+        $paciente->carnetIdentidad = $request->carnetIdentidad;
+        $paciente->telefono = $request->telefono;
+        $paciente->direccion = $request->direccion;
+
+        $paciente->save();
+
+        return redirect()->route('paciente.index');
     }
 
     /**
@@ -95,6 +114,10 @@ class PacienteController extends Controller
      */
     public function destroy(Paciente $paciente)
     {
-        //
+        $paciente = Paciente::find($paciente->id);
+
+        $paciente->delete($paciente->id);
+
+        return redirect()->route('paciente.index');
     }
 }

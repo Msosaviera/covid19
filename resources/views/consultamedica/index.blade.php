@@ -11,14 +11,15 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Número de Consulta</th>
                             <th>Fecha</th>
                             <th>Hora</th>
-                            <th>Molestas Previas</th>
-                            <th>Secretaria</th>
-                            <th>Médico</th>
-                            <th>Receta|</th>
+                            <th>Detalle</th>
+                            <th>Paciente</th>
                             <th>Cita</th>
+                            <th>Médico</th>
+                            <th>Accion</th>
+                            <th>Borrar</th>
+                            <th>Crear</th>
                             
                             
                         </tr>
@@ -27,32 +28,46 @@
                             @foreach ($consultamedicas as $consultamedica)
                             <tr>
                                 <td>{{ $consultamedica->id }}</td>
-                                <td>{{ $consultamedica->numCita }}</td>
                                 <td>{{ $consultamedica->fecha }}</td>
                                 <td>{{ $consultamedica->hora }}</td>
-                                <td>{{ $consultamedica->molestiasPrevias}}</td>
-                                <td>{{ $consultamedica->secretaria }}</td>
-                                <td>{{ $consultamedica->medico }}</td>
-                                <td>{{ $consultamedica->receta }}</td>
-                                <td>{{ $consultamedica->cita }}</td>
+                                <td>{{ $consultamedica->detalles}}</td>
+                                <td>{{ $consultamedica->nombre}}</td>
+                                <td>{{ $consultamedica->id_citamedicas }}</td>
+                                <td>{{ $consultamedica->name }}</td>
+                                @role('medico|administrador')
+                                <td><a href="{{ route('consultamedica.edit', $consultamedica) }}" class="btn btn-primary">Actualizar</a></td>
                                 
+                                <td>
+                                    <form method="POST" action="{{route('consultamedica.destroy',$consultamedica->id)}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Borrar</button>
+
+                                    </form>
+                                </td>
+                                <td><a href="{{ route('recetamedica', $consultamedica->id) }}" class="btn btn-dark">Receta</a></td>
                             </tr>
+                            @else
+                                <td><p>No tiene permiso de acceso.</p></td>
+                                @endrole
 
                             @endforeach
                     </tbody>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
-                        <<th>ID</th>
-                            <th>Número de Consulta</th>
+                        <th>ID</th>
+                            
                             <th>Fecha</th>
                             <th>Hora</th>
-                            <th>Molestas Previas</th>
-                            <th>Secretaria</th>
-                            <th>Médico</th>
-                            <th>Receta|</th>
+                            <th>detalles</th>
+                            <th>Paciente</th>
                             <th>Cita</th>
+                            <th>Médico</th>
+                            <th>Accion</th>
+                            <th>Borrrar</th>
+                            <th>Crear</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                 </table>
             </div>
         </div>

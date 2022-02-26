@@ -11,27 +11,56 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>laboratorio</th>
+                            <th>Detalle Consulta</th>
                             <th>Indicaciones</th>
+                            <th>laboratorio</th>
+                            <th>N° de consulta</th>
+                            <th>Paciente</th>
+                            <th>Medico</th>
+                            <!-- <th>Fecha</th> -->
+                            <th>Accion</th>
+                            <th>Borrar</th>
                         </tr>
                     </thead>
                     <tbody>
-                            @foreach ($recetas as $receta)
+                            @foreach ($recetamedicas as $recetamedica)
                             <tr>
-                                <td>{{ $receta->id }}</td>
-                                <td>{{ $receta->laboratorio }}</td>
-                                <td>{{ $receta->indicaciones }}</td>
-                            </tr>
+                                <td>{{ $recetamedica->id }}</td>
+                                <td>{{ $recetamedica->detalles }}</td>
+                                <td>{{ $recetamedica->indicaciones }}</td>
+                                <td>{{ $recetamedica->laboratorio }}</td>
+                                <td>{{ $recetamedica->id_consulta }}</td>
+                                <td>{{ $recetamedica->nombre }}</td>
+                                <td>{{ $recetamedica->name }}</td>
+                                <!-- <td>{{ date('d-M-y H:m', strtotime($recetamedica->created_at)) }}</td> -->
+                                @role('medico|administrador')
+                                <td><a href="{{ route('recetamedica.edit', $recetamedica) }}" class="btn btn-primary">Actualizar</a></td>
+                                
+                                <td>
+                                    <form method="POST" action="{{route('recetamedica.destroy',$recetamedica->id)}}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Borrar</button>
 
+                                    </form>
+                                </td>
+                                
+                            </tr>
+                            @else
+                                <td><p>No tiene permiso de acceso.</p></td>
+                                @endrole
                             @endforeach
                     </tbody>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
-                            <th>ID</th>
-                            <th>laboratorio</th>
+                        <th>ID</th>
                             <th>Indicaciones</th>
+                            <th>laboratorio</th>
+                            <th>N° de consulta</th>
+                            <th>Accion</th>
+                            <th>Borrar</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                 </table>
             </div>
         </div>

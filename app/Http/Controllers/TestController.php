@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
-
+    //Controlador autenticado
     public function __construct()
     {
         $this->middleware('auth');

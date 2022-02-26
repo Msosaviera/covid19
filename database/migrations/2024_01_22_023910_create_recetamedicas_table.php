@@ -17,8 +17,10 @@ class CreateRecetamedicasTable extends Migration
             $table->id();
             $table->text('indicaciones');
             $table->text('laboratorio');
+            $table->unsignedBigInteger('consulta_id');
+            $table->foreign('consulta_id')->references('id')->on('consultamedicas');
             $table->timestamps();
-            //$table->softDeletes();
+            $table->softDeletes();
         });
     }
 

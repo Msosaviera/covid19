@@ -17,16 +17,14 @@ class UserSeeder extends Seeder
             'name' => 'Marcelo Sosa',
             'email' => 'marcelo@gmail.com',
             'password' => Hash::make('12345678'),
-            'rol'=> 'Administrador',
-        ]
-    );
+        ]);
 
     DB::table('users')->insert(
     [
         'name' => 'Maria del Carmen Viera',
         'email' => 'mariadelcarmeno@gmail.com',
         'password' => Hash::make('12345678'),
-        'rol'=> 'Secretaria',
+        
     ]
 );
 DB::table('users')->insert(
@@ -34,7 +32,7 @@ DB::table('users')->insert(
     'name' => 'Jose Ernesto Sandoval',
     'email' => 'joseernesto@gmail.com',
     'password' => Hash::make('12345678'),
-    'rol'=> 'Medico',
+    
 ]
 );
         

@@ -69,6 +69,8 @@ body {
   background-color: #fff;
 }
 
+
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -565,7 +567,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1550px !important;
   }
 }
 
@@ -594,7 +596,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 1550px;
   }
 }
 .row {
@@ -3969,6 +3971,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
 }
 .navbar .container,
 .navbar .container-fluid,
@@ -5552,7 +5555,7 @@ a.close.disabled {
 }
 @media (min-width: 1200px) {
   .modal-xl {
-    max-width: 1140px;
+    max-width: 1550px !important;
   }
 }
 .tooltip {
