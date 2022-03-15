@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12">
             <h1>REPORTE DE CITAS MÉDICAS</h1>
-            <form method="GET" action="{{ route('excel') }}">
+            <form method="GET" action="{{ route('excelcita') }}">
             @csrf
             
                 <button type="submit"  class="btn btn-success">Exportar Excel</button>
@@ -58,20 +58,6 @@
 
                             @endforeach
                     </tbody>
-                    <!-- <tfoot>
-                        <tr>
-                        
-                            <<th>ID</th>
-                            <th>Fecha Cita</th>
-                            <th>Hora Cita</th>
-                            <th>Molestas Previas</th>
-                            <th>Paciente</th>
-                            <th>Médico</th>
-                            <th>Accion</th>
-                            <th>Borrrar</th>
-                            <th>Crear</th>
-                        </tr>
-                    </tfoot> -->
                 </table>
             </div>
         </div>

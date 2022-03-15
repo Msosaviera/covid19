@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+            <h1>REGISTRO DE PACIENTES</h1><br>
                 <form method="POST" action="{{ route('paciente.store') }}">
                     @csrf
                     <div class="form-group">

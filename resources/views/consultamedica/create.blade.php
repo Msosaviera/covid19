@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+            <h1>REGISTRO DE CONSULTAS MÉDICAS</h1><br>
                 <form method="POST" action="{{ route('consultamedica.store') }}">
                     @csrf
                     <div class="form-group">
@@ -21,14 +22,7 @@
                         <label for="exampleInputPassword1">Detalle Consulta</label>
                         <textarea name="detalles"  cols="30" rows="10" class="form-control" required></textarea>
                     </div> 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1"> Médico </label>
-                        <select name="usuario" id="">
-                            @foreach ($roles as $role)
-                                <option value="{{$role->id}}">{{$role->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Datos de Cita </label><br>
                             @foreach ($citamedicas as $citamedica)

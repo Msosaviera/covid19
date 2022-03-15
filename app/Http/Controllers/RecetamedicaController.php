@@ -9,6 +9,8 @@ use App\User;
 use App\Paciente;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\RecetamedicasExport;
 
 class RecetamedicaController extends Controller
 {
@@ -194,5 +196,9 @@ class RecetamedicaController extends Controller
         $recetamedica->delete($recetamedica->id);
 
         return redirect()->route('recetamedica.index');
+    }
+    public function excelreceta()
+    {
+        return Excel::download(new RecetamedicasExport,'recetas.xlsx');
     }
 }

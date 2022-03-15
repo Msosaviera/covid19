@@ -9,6 +9,8 @@ use App\Paciente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ConsutamedicasExport;
 
 class ConsultamedicaController extends Controller
 {
@@ -182,5 +184,9 @@ class ConsultamedicaController extends Controller
         $consultamedica->delete($consultamedica->id);
 
         return redirect()->route('consultamedica.index');
+    }
+    public function excelconsulta()
+    {
+        return Excel::download(new ConsutamedicasExport,'consultasmedicas.xlsx');
     }
 }

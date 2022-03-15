@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Paciente;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PacientesExport;
 
 class PacienteController extends Controller
 {
@@ -119,5 +121,9 @@ class PacienteController extends Controller
         $paciente->delete($paciente->id);
 
         return redirect()->route('paciente.index');
+    }
+    public function excelpaciente()
+    {
+        return Excel::download(new PacientesExport,'pacientes.xlsx');
     }
 }

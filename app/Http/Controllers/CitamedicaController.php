@@ -10,6 +10,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\CitamedicasExport;
 
 class CitamedicaController extends Controller
 {
@@ -29,7 +30,7 @@ class CitamedicaController extends Controller
         //->addSelect('pacientes.id as id_pacientes', 'users.id as id_users')
         ->join("pacientes","citamedicas.paciente_id","=","pacientes.id")
         //->where('users.estado','=',1)
-        ->select('citamedicas.*', 'users.id as id_user', 'users.name as name', 'pacientes.id as id_paciente', 'pacientes.nombre as nombre')
+        ->select('citamedicas.id', 'citamedicas.fechaCita','citamedicas.horaCita','citamedicas.molestiasPrevias', 'users.id as id_user', 'users.name as name', 'pacientes.id as id_paciente', 'pacientes.nombre as nombre')
         ->get();
         //dd($citamedicas);
 
@@ -157,38 +158,8 @@ class CitamedicaController extends Controller
         return redirect()->route('citamedica.index');
     }
 
-    public function excel()
+    public function excelcita()
     {
-         $citamedicas = Citamedica::join("users","citamedicas.usuario_id","=","users.id")
-         //->addSelect('pacientes.id as id_pacientes', 'users.id as id_users')
-         ->join("pacientes","citamedicas.paciente_id","=","pacientes.id")
-         //->where('users.estado','=',1)
-         ->select('citamedicas.*', 'users.id as id_user', 'users.name as name', 'pacientes.id as id_paciente', 'pacientes.nombre as nombre')
-         ->get();
-         //dd($citamedicas);
-         
-        //  $customer_array[] = array('id', 'fecha', 'hora', 'molestiasPrevias', 'Paciente', 'Medico');
-        //  foreach($citamedicas as $cita)
-        //         {
-        //             $customer_array[] = array(
-        //             'id'  => $cita->id,
-        //             'fecha'   => $cita->fecha,
-        //             'hora'    => $cita->hora,
-        //             'molestiasPrevias'  => $cita->molestiasPrevias,
-        //             'Paciente'   => $cita->nombre,
-        //             'Medico'   => $cita->name
-        //             );
-        //         }
-                //dd($customer_array);
-                // Excel::download('Citas', function($excel) use ($customer_array){
-                // $excel->setTitle('Citas');
-                // $excel->sheet('Citas', function($sheet) use ($customer_array){
-                // $sheet->fromArray($customer_array, null, 'A1', false, false);
-                // });
-                // })->download('xlsx');
-
-                //$export = new ArchivoPrimarioExport($data);
-
-                return Excel::download($citamedicas, 'Citas'.'.xlsx');
+        return Excel::download(new CitaMedicasExport,'citasmedicas.xlsx');
     }
 }

@@ -61,6 +61,17 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"> Rol </label>
+                            <select name="roles[]" id="">
+                                @forelse ($roles as $role)
+                                    <option value="{{$role->id}}">{{$role->name}}</option>
+                                    @empty
+                                    <option value=""></option>
+                                @endforelse
+                            </select>
+                        </div>
                     
 
                         <div class="form-group row mb-0">

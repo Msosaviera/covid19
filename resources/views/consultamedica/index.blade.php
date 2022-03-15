@@ -5,7 +5,12 @@
 <div class="container" style="margin-top: 150px">
     <div class="row">
         <div class="col-12">
-            <h1>REPORTE DE CONSULTAS MÉDICAS</h1>
+            <h1>REPORTE DE CONSULTAS MÉDICAS</h1><br>
+            <form method="GET" action="{{ route('excelconsulta') }}">
+            @csrf
+            
+                <button type="submit"  class="btn btn-success">Exportar Excel</button>
+            </form>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

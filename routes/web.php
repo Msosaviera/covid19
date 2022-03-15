@@ -36,7 +36,11 @@ Route::resource('recetamedica', 'RecetamedicaController');
 Route::resource('secretaria', 'SecretariaController');
 Route::resource('paciente', 'PacienteController');
 Route::resource('citamedica', 'CitamedicaController');
-Route::get('excel/', 'CitamedicaController@excel')->name('excel');
+Route::resource('user', 'UserController');
+Route::get('excelcita/', 'CitamedicaController@excelcita')->name('excelcita');
+Route::get('excelconsulta/', 'ConsultamedicaController@excelconsulta')->name('excelconsulta');
+Route::get('excelpaciente/', 'PacienteController@excelpaciente')->name('excelpaciente');
+Route::get('excelreceta/', 'RecetamedicaController@excelreceta')->name('excelreceta');
 
 
 

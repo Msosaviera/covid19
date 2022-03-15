@@ -55,6 +55,7 @@
                             <a class="dropdown-item" href="{{ route('consultamedica.index') }}">Consultas</a>
                             <a class="dropdown-item" href="{{ route('paciente.index') }}">Pacientes</a>
                             <a class="dropdown-item" href="{{ route('recetamedica.index') }}">Recetas</a>
+                            <a class="dropdown-item" href="{{ route('user.index') }}">Usuarios</a>
                         </div>
                     </div>
                 </li>

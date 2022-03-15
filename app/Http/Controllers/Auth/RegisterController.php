@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -39,6 +40,9 @@ class RegisterController extends Controller
     public function __construct()
     {
         //$this->middleware('guest');
+        $roles = Role::all()->pluck('name', 'id');
+        //dd($roles);
+        return view('auth.register', compact('roles'));
     }
 
     /**
@@ -72,4 +76,10 @@ class RegisterController extends Controller
             'rol' => $data['rol'],
         ]);
     }
+
+    // function getRoles(){
+    //     $roles = Role::all()->pluck('name', 'key');
+    //     dd($roles);
+    //     return view('auth.register', $roles);
+    // }
 }

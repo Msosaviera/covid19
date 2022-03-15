@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+            <h1>EDITAR PACIENTES</h1>
                 <form method="POST" action="{{ route('paciente.update',$paciente->id) }}">
                     @csrf
                     @method('PATCH')
