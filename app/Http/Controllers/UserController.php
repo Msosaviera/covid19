@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use App\Http\Requests\userRequest;
 
 use App\User;
 
@@ -15,7 +16,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $users = User::all();
         return view('users.index')->with('users', $users);    
     }
@@ -27,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {          
-        $roles=Role::all()->pluck('id','name');
+        $roles=Role::all()->pluck('name','id');
         return view('users.create', compact('roles'));        
     }
 
@@ -37,11 +38,13 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-
-        User::create($request->all()); 
-        return redirect()->route('user.index');       
+    public function store(userRequest $request)
+    {        
+        $rol_elegido=Role::find($request->input('rol'));
+        //return $rol_elegido->name;
+        $user=User::create($request->all()); 
+        $user->assignRole($rol_elegido);
+        return redirect()->route('user.index');               
     }
 
     /**
@@ -61,9 +64,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        
+        $roles=Role::all()->pluck('name','id');
+        $rol_activo= $user->roles->first()->id;
+        return view('users.edit', compact('user','roles','rol_activo'));
     }
 
     /**
@@ -73,9 +79,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(userRequest $request, User $user)
     {
-        //
+        $rol_elegido=Role::find($request->input('rol'));
+        $user->update($request->all());
+        $user->syncRoles($rol_elegido);
+        return redirect()->route('user.index');         
     }
 
     /**
@@ -86,6 +95,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return redirect()->route('user.index'); 
     }
 }

@@ -7,7 +7,9 @@
         <div class="row">
             <div class="col-12">
             <h1>REGISTRO DE Usuarios</h1><br>
-                <form method="POST" action="{{ route('user.store') }}">
+                <!-- <form method="POST" action="{{ route('user.store') }}"> -->
+
+                {!!Form::open(array('route'=>array('user.store'), 'method'=>'post')) !!}
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nombre de usuario</label>
@@ -21,21 +23,13 @@
                         <label for="exampleInputEmail1">Contraseña</label>
                         <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
                     </div>
+                                        
+                    {{Form::label('Roles')}}
+                    {{Form::select('rol', $roles,1,['class'=>'form-control'])}}
                     
-
-                    <div class="form-group">
-                        <label for="exampleInputEmail1"> Roles </label>
-                        <select name="roles">
-                            @forelse ($roles as $role)
-                                <option value="{{$role->id}}">{{$role->name}}</option>
-                                                                        
-                            @endforelse
-                        </select>
-                    </div>
-
-
                     <button type="submit" class="btn btn-primary">Registrar Paciente</button>
-                </form>
+                <!-- </form> -->
+                {!!Form::close() !!}
             </div>
         </div>
     </div>
