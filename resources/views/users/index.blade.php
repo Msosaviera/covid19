@@ -5,7 +5,8 @@
 <div class="container" style="margin-top: 150px">
     <div class="row">
         <div class="col-12">
-            <h1>REPORTE DE USUARIOS</h1>
+            <h1>GESTIÓN DE USUARIOS</h1>             
+            <a class="btn btn-primary" href="{{ route('user.create') }}">Crear</a>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

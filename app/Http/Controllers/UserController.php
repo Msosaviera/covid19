@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+
 use App\User;
 
 class UserController extends Controller
@@ -15,8 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index')->with('users', $users);
-    
+        return view('users.index')->with('users', $users);    
     }
 
     /**
@@ -25,8 +26,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {          
+        $roles=Role::all()->pluck('id','name');
+        return view('users.create', compact('roles'));        
     }
 
     /**
@@ -37,7 +39,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        User::create($request->all()); 
+        return redirect()->route('user.index');       
     }
 
     /**
