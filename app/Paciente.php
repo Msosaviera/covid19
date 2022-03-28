@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Paciente extends Model
 {
     protected $guarded = [];
-
+    use SoftDeletes;
 }

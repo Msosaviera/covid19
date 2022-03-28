@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Consultamedica;
-use SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Recetamedica extends Model
 {
     protected $guarded = [];
+    use SoftDeletes;
 
     public function consultamedica()
     {

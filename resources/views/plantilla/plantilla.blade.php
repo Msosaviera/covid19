@@ -61,7 +61,7 @@
                 </li>
                 @role('administrador')
                 @if (Route::has('register'))
-                <li class="nav-item mx-0 mx-lg-1 list-unstyled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('register') }}">Registrate</a></li>
+                <li class="nav-item mx-0 mx-lg-1 list-unstyled"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ route('user.create') }}">Registrate</a></li>
                 @endif
                 @endrole
                 <li>
@@ -80,7 +80,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('    Salir') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
