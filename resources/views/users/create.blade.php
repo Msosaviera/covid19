@@ -6,8 +6,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <h1>REGISTRO DE USUARIOS</h1><br>
-                
+            <h1>REGISTRO DE Usuarios</h1><br>
+                <!-- <form method="POST" action="{{ route('user.store') }}"> -->
+
 
                 {!!Form::open(array('route'=>array('user.store'), 'method'=>'post')) !!}
                     @csrf
@@ -25,7 +26,9 @@
                     </div>
                                         
                     {{Form::label('Roles')}}
+
                     {{Form::select('rol', $roles,1,['class'=>'form-control'])}}<br>
+
                     
                     <button type="submit" class="btn btn-primary">Registrar Paciente</button>
                 <!-- </form> -->

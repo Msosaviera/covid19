@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col-12">
             <h1>GESTIÓN DE USUARIOS</h1>             
+
             <a class="btn btn-primary" href="{{ route('user.create') }}">Crear</a><br>
+
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -15,8 +17,12 @@
                             <th>Nombre</th>
                             <th>Correo Electronico</th>
                             <th>Roles</th>
+
                             <th>Editar</th>
                             <th>Eliminar</th>
+
+                            <th>Acciones</th>
+
 
                         </tr>
                     </thead>
@@ -39,7 +45,7 @@
                                 <td> 
                                 <a class="btn btn-success" href="{{ route('user.edit',$user->id) }}">Editar</a>  
                                 </td>
-                                <td> 
+                                <td>                                 
                                     <form method="POST" action="{{route('user.destroy',$user->id)}}">
                                         @csrf
                                         @method('DELETE')
