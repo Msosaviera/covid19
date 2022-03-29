@@ -2,6 +2,14 @@
 @section('titulo','Cita Medica')
 @section('contenido')
 
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+
+
 <section style="margin-top: 150px">
     <div class="container">
         <div class="row">
@@ -24,12 +32,22 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Paciente </label>
-                        <select name="paciente" id="">
+                     
+                            
+                        </select>
+                        <select class="selectpicker show-menu-arrow" 
+                                data-style="form-control" 
+                                data-live-search="true" 
+                                title="Selccionar paciente"
+                                multiple="multiple">
                             @foreach ($pacientes as $paciente)
-                                <option value="{{$paciente->id}}">{{$paciente->nombre}}</option>
+                                <option data-tokens="{{$paciente->nombre}}" value="{{$paciente->id}}">{{$paciente->nombre}} {{$paciente->appaterno}}  {{$paciente->apmaterno}}</option>
                             @endforeach
                         </select>
                     </div>
+
+
+                    
                    
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Médico </label>

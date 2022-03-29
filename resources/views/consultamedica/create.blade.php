@@ -25,12 +25,18 @@
 
                     <div class="form-group">
                         <label for="exampleInputEmail1"> Datos de Cita </label><br>
-                            @foreach ($citamedicas as $citamedica)
-                                <label>Numero Cita:   </label><input value="{{$citamedica->id}}" disabled ><br>
-                                <label>Paciente:    </label><input value="{{$citamedica->nombre}}" disabled /><br>
-                                <label>Medico:    </label><input value="{{$citamedica->name}}" disabled /><br>
-                                <input type="hidden" name="cita" value="{{$citamedica->id}}">
-                            @endforeach
+
+                        {{$citamedicas}}
+            
+                        <label>Numero Cita:   </label><input value="{{$citamedicas[0]->id}}" disabled ><br>
+                        <input type="hidden" name="cita" value="{{$citamedicas[0]->id}}">
+
+                        <label>Paciente:    </label><input name="hora" value="{{$citamedicas[0]->nombre}}" disabled /><br>                        
+
+                        <label>Medico:    </label><input value="{{$citamedicas[0]->name}}" disabled /><br>                        
+                        <input type="hidden" name="usuario" value="{{$citamedicas[0]->usuario_id}}">
+                        
+                    
                     </div>
 
                     

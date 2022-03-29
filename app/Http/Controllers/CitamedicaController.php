@@ -51,6 +51,7 @@ class CitamedicaController extends Controller
 
         //dd($roles);
         $pacientes = Paciente::all();
+        //return $pacientes;
        // $medicos = Medico::all();
         $secretarias = Secretaria::all();
         $users = User::all();

@@ -49,6 +49,7 @@ class ConsultamedicaController extends Controller
         })->get();
         $citamedicas = Citamedica::all();
         $users = User::all();
+     
 
         return view('consultamedica.create')
         ->with('users',$users)
@@ -88,6 +89,9 @@ class ConsultamedicaController extends Controller
      */
     public function store(Request $request)
     {
+        //return $request->all();
+        
+        //return $request->usuario;
        // dd($request->all());
         $consultamedica = new Consultamedica();
 
